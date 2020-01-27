@@ -1,20 +1,30 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import mikihausLogo from '../images/mikihaus-icon.jpg'
+import styled from 'styled-components';
+
+
+const HeaderWrapper = styled.div`
+  background: #F0CFC0;
+  marginBottom: '1.45rem';
+  img {
+    margin-bottom: 0;
+  }
+`;
+
+const HeaderContainer = styled.div`
+        margin: 0 auto;
+        maxWidth: 960;
+        padding: 0.5rem;
+`;
+
+
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+  <HeaderWrapper>
+    <HeaderContainer
+
     >
       <h1 style={{ margin: 0 }}>
         <Link
@@ -24,11 +34,17 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          <img
+            style={{
+              width: '50px',
+            }}
+            src={mikihausLogo}
+            alt="mikihaus LoGO"
+          />
         </Link>
       </h1>
-    </div>
-  </header>
+    </HeaderContainer>
+  </HeaderWrapper>
 )
 
 Header.propTypes = {
